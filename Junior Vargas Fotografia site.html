@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Junior Vargas Fotografia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0a09;--bg2:#12100e;--line:#26221e;--text:#ece7df;--mute:#9a9288;--acc:#d9a45b;--accd:#8a6535;
+--h:'Outfit',system-ui,sans-serif;--b:'Source Sans 3',system-ui,sans-serif;color-scheme:dark;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--text);font:400 17px/1.7 var(--b)}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+section{padding:96px 0}
+h1,h2,h3{font-family:var(--h);font-weight:300;line-height:1.1;margin:0}
+.eyebrow{font:500 12px var(--h);letter-spacing:.28em;text-transform:uppercase;color:var(--acc);margin-bottom:18px;display:block}
+h2{font-size:clamp(30px,5vw,46px);margin-bottom:48px}
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:20;padding-top:env(safe-area-inset-top,0px);transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+nav.sc{background:rgba(11,10,9,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line)}
+.nb{display:flex;justify-content:space-between;align-items:center;height:72px}
+.logo{font:500 15px var(--h);letter-spacing:.2em;text-transform:uppercase}
+.logo span{color:var(--acc)}
+.nl{display:none;gap:32px;font-size:15px;color:var(--mute)}
+.nl a{transition:color .25s}.nl a:hover{color:var(--text)}
+@media(min-width:760px){.nl{display:flex}}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:19;background:var(--bg)}
+/* hero */
+.hero{min-height:100svh;display:flex;align-items:center;position:relative;overflow:hidden;padding:120px 0 80px}
+.hero::before{content:"";position:absolute;width:640px;height:640px;right:-180px;top:50%;transform:translateY(-50%);border-radius:50%;
+background:radial-gradient(circle at 40% 40%,rgba(217,164,91,.16),transparent 62%);pointer-events:none}
+.lens{position:absolute;right:6%;top:50%;transform:translateY(-50%);width:min(420px,70vw);opacity:.5;pointer-events:none}
+.hero h1{font-size:clamp(44px,9vw,96px);letter-spacing:-.02em;max-width:11ch}
+.hero h1 em{font-style:normal;color:var(--acc)}
+.hero p{max-width:520px;color:var(--mute);font-size:19px;margin:28px 0 40px}
+.btns{display:flex;flex-wrap:wrap;gap:14px;position:relative}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border:1px solid var(--line);border-radius:2px;font:500 14px var(--h);letter-spacing:.08em;text-transform:uppercase;transition:all .3s}
+.btn:hover{border-color:var(--acc);color:var(--acc)}
+.btn.p{background:var(--acc);border-color:var(--acc);color:#16110b}
+.btn.p:hover{background:transparent;color:var(--acc)}
+.btn svg{width:16px;height:16px}
+/* sobre */
+.ab{display:grid;gap:48px}
+@media(min-width:860px){.ab{grid-template-columns:1.3fr 1fr}}
+.ab p{color:var(--mute);margin:0 0 20px}
+.ab p:first-child{color:var(--text);font-size:21px;font-weight:300}
+.st{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);align-self:start}
+.st div{background:var(--bg);padding:26px 22px}
+.st b{display:block;font:300 34px var(--h);color:var(--acc)}
+.st span{font-size:14px;color:var(--mute)}
+.tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.tags span{font-size:14px;padding:6px 16px;border:1px solid var(--line);border-radius:30px;color:var(--mute);transition:all .25s}
+.tags span:hover{border-color:var(--accd);color:var(--text)}
+/* portfolio */
+.gal{display:grid;gap:18px;grid-template-columns:1fr}
+@media(min-width:640px){.gal{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:960px){.gal{grid-template-columns:repeat(3,1fr)}}
+.ph{position:relative;overflow:hidden;border:1px solid var(--line);min-height:300px;display:flex;align-items:flex-end;padding:26px;transition:transform .4s,border-color .4s}
+.ph:nth-child(3n+2){min-height:380px}
+.ph::before{content:"";position:absolute;inset:0;background:var(--g);transition:transform .8s}
+.ph::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(11,10,9,.85),transparent 60%)}
+.ph:hover{transform:translateY(-6px);border-color:var(--acc)}
+.ph:hover::before{transform:scale(1.08)}
+.ph div{position:relative;z-index:1}
+.ph h3{font-size:24px;margin-bottom:4px}
+.ph small{color:var(--mute);font-size:14px}
+.ph i{position:absolute;top:20px;right:22px;z-index:1;font:300 13px var(--h);letter-spacing:.2em;color:var(--mute);font-style:normal}
+.note{margin-top:28px;color:var(--mute);font-size:15px}
+/* depoimentos */
+.tm{display:grid;gap:20px}
+@media(min-width:860px){.tm{grid-template-columns:repeat(3,1fr)}}
+.tm blockquote{margin:0;padding:32px 28px;background:var(--bg2);border:1px solid var(--line);transition:border-color .3s}
+.tm blockquote:hover{border-color:var(--accd)}
+.stars{color:var(--acc);letter-spacing:4px;font-size:15px;margin-bottom:16px}
+.tm p{margin:0 0 22px;color:var(--text);font-weight:300}
+.tm cite{font:500 14px var(--h);font-style:normal;color:var(--mute);letter-spacing:.06em}
+/* contato */
+.ct{text-align:center;border-top:1px solid var(--line)}
+.ct h2{margin-bottom:20px}
+.ct p{max-width:520px;margin:0 auto 36px;color:var(--mute)}
+.ct .btns{justify-content:center}
+footer{padding:28px 0 36px;text-align:center;color:var(--mute);font-size:14px;border-top:1px solid var(--line)}
+/* reveal */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s ease}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav id="nav"><div class="wrap nb">
+  <a href="#topo" class="logo">Junior <span>Vargas</span></a>
+  <div class="nl"><a href="#sobre">Sobre</a><a href="#portfolio">Portfólio</a><a href="#depoimentos">Depoimentos</a><a href="#contato">Contato</a></div>
+</div></nav>
+
+<main id="topo">
+<header class="hero"><div class="wrap">
+  <svg class="lens" viewBox="0 0 200 200" fill="none" stroke="#d9a45b" stroke-width=".6" aria-hidden="true">
+    <circle cx="100" cy="100" r="96"/><circle cx="100" cy="100" r="76"/><circle cx="100" cy="100" r="52"/><circle cx="100" cy="100" r="28"/>
+    <path d="M100 4v192M4 100h192M32 32l136 136M168 32L32 168" opacity=".35"/>
+  </svg>
+  <span class="eyebrow">Junior Vargas Fotografia</span>
+  <h1>Luz, <em>tempo</em> e memória.</h1>
+  <p>Fotografia autoral que transforma momentos reais em imagens para guardar a vida inteira, com olhar atento e sem poses forçadas.</p>
+  <div class="btns">
+    <a class="btn p" href="#portfolio">Ver portfólio</a>
+    <a class="btn" href="https://www.instagram.com/junior_vargas_fotografia/" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg>Instagram</a>
+    <a class="btn" href="https://share.google/qBYNpEerGsjdFHfjT" target="_blank" rel="noopener">Avaliações no Google</a>
+  </div>
+</div></header>
+
+<section id="sobre"><div class="wrap ab">
+  <div class="rv">
+    <span class="eyebrow">Sobre</span>
+    <p>Fotografar é escolher o que merece permanecer. Meu trabalho nasce da escuta, da luz natural e da paciência de esperar o instante certo.</p>
+    <p>Cada sessão é pensada para quem está na frente da câmera: conversa antes, direção leve durante e um tratamento de imagem cuidadoso depois. O resultado são fotos naturais, com a sua cara.</p>
+    <p>Atendo ensaios, casamentos, eventos e fotografia de família.</p>
+    <div class="tags"><span>Luz natural</span><span>Retrato</span><span>Casamento</span><span>Eventos</span><span>Família</span><span>Tratamento de cor</span><span>Álbuns</span></div>
+  </div>
+  <!-- Edite os números abaixo com os seus dados reais -->
+  <div class="st rv">
+    <div><b>00+</b><span>Anos de estrada</span></div>
+    <div><b>000+</b><span>Ensaios realizados</span></div>
+    <div><b>00+</b><span>Casamentos</span></div>
+    <div><b>5,0</b><span>Nota no Google</span></div>
+  </div>
+</div></section>
+
+<section id="portfolio"><div class="wrap">
+  <span class="eyebrow rv">Portfólio</span>
+  <h2 class="rv">Trabalhos por categoria</h2>
+  <div class="gal">
+    <article class="ph rv" style="--g:linear-gradient(160deg,#3a2a1c,#1a120b 60%,#6b4a2a)"><i>01</i><div><h3>Casamentos</h3><small>Cerimônia, festa e os detalhes entre eles</small></div></article>
+    <article class="ph rv" style="--g:linear-gradient(200deg,#2b2f33,#121416 65%,#4d4238)"><i>02</i><div><h3>Ensaios</h3><small>Individuais, casal e gestante</small></div></article>
+    <article class="ph rv" style="--g:linear-gradient(120deg,#40281f,#150e0b 60%,#7a5a3a)"><i>03</i><div><h3>Família</h3><small>Gerações no mesmo quadro</small></div></article>
+    <article class="ph rv" style="--g:linear-gradient(170deg,#1f2a2a,#0e1313 60%,#52432f)"><i>04</i><div><h3>Eventos</h3><small>Aniversários, formaturas e corporativos</small></div></article>
+    <article class="ph rv" style="--g:linear-gradient(210deg,#33261a,#120d09 62%,#5e4a36)"><i>05</i><div><h3>Retratos</h3><small>Perfil profissional e autoral</small></div></article>
+    <article class="ph rv" style="--g:linear-gradient(140deg,#2a2420,#100d0b 60%,#8a6535)"><i>06</i><div><h3>Newborn e Infantil</h3><small>Começos registrados com calma</small></div></article>
+  </div>
+  <p class="note rv">Para ver o trabalho completo, acesse o <a href="https://www.instagram.com/junior_vargas_fotografia/" target="_blank" rel="noopener" style="color:var(--acc)">Instagram</a>.</p>
+</div></section>
+
+<section id="depoimentos"><div class="wrap">
+  <span class="eyebrow rv">Depoimentos</span>
+  <h2 class="rv">O que dizem os clientes</h2>
+  <!-- Substitua os textos abaixo pelas avaliações reais do seu perfil no Google -->
+  <div class="tm">
+    <blockquote class="rv"><div class="stars">★★★★★</div><p>“Cole aqui o texto da primeira avaliação copiada do seu perfil no Google.”</p><cite>Nome do cliente</cite></blockquote>
+    <blockquote class="rv"><div class="stars">★★★★★</div><p>“Cole aqui o texto da segunda avaliação copiada do seu perfil no Google.”</p><cite>Nome do cliente</cite></blockquote>
+    <blockquote class="rv"><div class="stars">★★★★★</div><p>“Cole aqui o texto da terceira avaliação copiada do seu perfil no Google.”</p><cite>Nome do cliente</cite></blockquote>
+  </div>
+  <p class="note rv"><a href="https://share.google/qBYNpEerGsjdFHfjT" target="_blank" rel="noopener" style="color:var(--acc)">Ler todas as avaliações no Google</a></p>
+</div></section>
+
+<section id="contato" class="ct"><div class="wrap rv">
+  <span class="eyebrow">Contato</span>
+  <h2>Vamos registrar o seu momento?</h2>
+  <p>Conte o que você tem em mente e eu respondo com disponibilidade e valores. Toda boa foto começa com uma conversa.</p>
+  <div class="btns">
+    <a class="btn p" href="https://www.instagram.com/junior_vargas_fotografia/" target="_blank" rel="noopener">Chamar no Instagram</a>
+    <a class="btn" href="https://share.google/qBYNpEerGsjdFHfjT" target="_blank" rel="noopener">Perfil no Google</a>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">© <span id="y"></span> Junior Vargas Fotografia. Todos os direitos reservados.</div></footer>
+
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+var nav=document.getElementById('nav');
+function sc(){nav.classList.toggle('sc',window.scrollY>30)}
+addEventListener('scroll',sc,{passive:true});sc();
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.rv').forEach(function(el,i){el.style.transitionDelay=(i%3)*90+'ms';io.observe(el)});
+</script>
+</body>
+</html>
